@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,16 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 String textToSave = mEditText.getText().toString();
                 mSharedPreferences.edit().putString("edit_text_preference", textToSave).apply();
                 Toast.makeText(MainActivity.this, "Chave API salva com sucesso!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+                startActivity(intent);
             }
         });
-//        ImageView imageView = findViewById(R.id.imageView7);
-//        imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), Chat.class);
-//                startActivity(intent);
-//            }
-//        });
 
     }
 }
